@@ -105,6 +105,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
         }
 
+        // books.list.page
+        if ($pathinfo === '/books') {
+            return array (  '_controller' => 'AppBundle\\Controller\\BookController::indexAction',  '_route' => 'books.list.page',);
+        }
+
         // homepage
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
